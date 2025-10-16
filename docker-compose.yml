@@ -1,0 +1,44 @@
+version: "3.9"
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  backend:
+    build: ./backend
+    environment:
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-local-384}
+      - LLM_PROVIDER=${LLM_PROVIDER:-stub}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OLLAMA_HOST=${OLLAMA_HOST:-http://ollama:11434}
+      - VECTOR_STORE=${VECTOR_STORE:-qdrant}
+      - COLLECTION_NAME=${COLLECTION_NAME:-policy_helper}
+      - CHUNK_SIZE=${CHUNK_SIZE:-1200}
+      - CHUNK_OVERLAP=${CHUNK_OVERLAP:-150}
+    volumes:
+      - ./data:/app/data:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    environment:
+      - NEXT_PUBLIC_API_BASE=${NEXT_PUBLIC_API_BASE:-http://localhost:8000}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  qdrant_data:

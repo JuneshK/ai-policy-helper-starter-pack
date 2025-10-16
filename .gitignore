@@ -1,0 +1,20 @@
+#logs
+*.log
+.DS_Store
+backend/.DS_Store
+backend/.DS_Store
+
+#Environment variables
+.env
+.env.example
+
+#ReadMe files
+AI_POLICY_HELPER_README.md
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Python / backend
+__pycache__/
