@@ -134,9 +134,10 @@ Explain how to run automated tests for this system.
 Explain what these tests test and why
 
 ```
-Give an example
+docker compose run --rm backend pytest -q
 ```
-
+<br>
+<small>⚠️ Note: The provided <code>docker compose run --rm backend pytest -q</code> setup fails due to issues with the Docker backend and connecting to the Qdrant database. Hence , testing cannot be done.</small>
 
 ## 📁 Project Structure
 
@@ -187,7 +188,6 @@ ai-policy-helper/
 
 
 ## ✍️ Authors <a name = "authors"></a>
-- Arrivo 
 - Myself
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
