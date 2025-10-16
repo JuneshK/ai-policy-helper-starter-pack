@@ -176,7 +176,7 @@ ai-policy-helper/
 ```
 
 ## 🎈 Demo Video <a name="demo-video"></a>
--[Youtube] - Link to watch the demo of this project
+-[Google Drive](https://drive.google.com/drive/folders/1aeYDGklDoO1dJrGWMSyuYtgyGSfx8PGa?usp=drive_link) - Link to watch the demo of this project
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
