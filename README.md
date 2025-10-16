@@ -196,3 +196,4 @@ ai-policy-helper/
 ## 🎉 References<a name = "reference"></a>
 - [TailwindCSS](https://tailwindcss.com/) - How to Import Tailwind on Next.js
 - [HelloInterview](https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery) - System Design
+- [Google Docs](https://docs.google.com/document/d/1irwxfSW1CIhFNfF-QptE0EOPVLqTquxpRPxOPc1X68Q/edit?usp=sharing) - Debugging & Challenges
